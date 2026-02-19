@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/svg+xml" href="{% static 'login/icons/favicon.svg' %}">
+    <link rel="icon" type="image/png" href="{% static 'login/icons/favicon.png' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'login/css/geral.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/popup.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/variaveis.css' %}">
+
+    <script src="{% static 'login/js/lockout.js' %}" defer></script>
+    <script src="{% static 'login/js/login.js' %}" defer></script>
+
+    <title>Login Peniel</title>
+</head>
+
+<body>
+    <div class="geral">
+
+        <div>
+            <header>
+                <h2 class="poppins-semibold subtitulo">Login</h2>
+            </header>
+            <main>
+                <form class="login-form" method="POST">
+                    {% csrf_token %}
+                    
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="message {{ message.tags }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <label for="email" class="login-form-label">Email</label>
+                    <input type="email" id="email" name="username" class="login-form-input" required {% if lockout_active %}disabled{% endif %}>
+
+                    
+                    <label for="password" class="login-form-label">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" name="password" class="login-form-input" {% if lockout_active %}disabled{% endif %}>
+                        <button type="button" id="togglePassword" class="toggle-password" {% if lockout_active %}disabled{% endif %}>
+                            <img id="eyeIcon" src="{% static 'login/icons/eye_off.svg' %}"
+                                alt="Toggle Password Visibility">
+                        </button>
+                    </div>
+
+                    <button type="submit" class="login-button" {% if lockout_active %}disabled{% endif %}>Log In</button>
+                    <div class="links-container">
+                        <a href="#" class="forgot-password">Esqueceu sua Senha?</a>
+                        <a href="{% url 'suporte:enviar_mensagem' %}" class="support-link">Suporte</a>
+                    </div>
+                </form>
+            </main>
+            <footer class="login-footer">
+                <p class="copyright">Copyright © 2025 Peniel.</p>
+                <a href="#">Termos de Serviço</a> | <a href="#">Política de Privacidade</a>
+            </footer>
+        </div>
+        <div class="image-background"></div>
+    </div>
+
+    <!-- Pop-up de Bloqueio de Tentativas de Login -->
+    {% if lockout_active %}    
+    <div id="lockout-popup" class="popup-overlay">
+        <div class="popup-content">
+            <h2 class="poppins-semibold">Muitas tentativas de login</h2>
+            <p class="texto">Por segurança, o acesso foi bloqueado temporariamente.</p>
+            <p class="texto">Por favor, aguarde <strong id="countdown-timer">{{ lockout_duration }}</strong> segundos.</p>
+            <button id="popup-close-btn" class="login-button" disabled>Aguarde...</button>
+        </div>
+    </div>
+    {% endif %}    
+
+    <script>
+        const eyeOn = "{% static 'login/icons/eye_on.svg' %}";
+        const eyeOff = "{% static 'login/icons/eye_off.svg' %}";
+    </script>
+
+</body>
+
+</html>

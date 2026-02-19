@@ -1,0 +1,16 @@
+/* Fontes Poppins */
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+.poppins-thin { font-weight: 100; }
+.poppins-extralight { font-weight: 200; }
+.poppins-light { font-weight: 300; }
+.poppins-regular { font-weight: 400; }
+.poppins-medium { font-weight: 500; }
+.poppins-semibold { font-weight: 600; }
+.poppins-bold { font-weight: 700; }
+.poppins-extrabold { font-weight: 800; }
+.poppins-black { font-weight: 900; }
+
+.poppins-italic { font-style: italic; }

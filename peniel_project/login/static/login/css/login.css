@@ -1,0 +1,335 @@
+.geral{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 40px 0;
+}
+
+.subtitulo{
+    font-size: 2rem;
+    padding: 2rem;
+}
+
+.texto{
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+}
+
+a{
+    color: var(--primary-color);
+}
+
+a:hover{
+    color: var(--primary-color-hover);
+    text-decoration: none;
+}
+
+.image-background{
+    background-size: cover;
+    background-image: url(../images/peniel-logo.jpg);
+}
+
+.login-form{
+    margin: 60px;
+    text-align: start;
+}
+
+.login-form-label{
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+/* Desabilitar o botão de revelação de senha padrão no Microsoft Edge */
+input[type="password"]::-ms-reveal {
+    display: none;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password img {
+    width: 25px;
+    height: 25px;
+}
+
+.login-form-input{
+    width: 100%;
+    margin: 0.25rem 0 2rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.75rem;
+    background-color: var(--background-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.25rem;
+}
+
+.login-form-input:hover{
+    border-color: var(--primary-color);
+}
+
+.login-form-input:focus{
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Label para o grupo do checkbox */
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+/* Esconde o checkbox real */
+.login-checkbox {
+    display: none;
+}
+
+/* Desenha o quadradinho */
+.custom-checkbox {
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 0.25rem;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* O check (✔) que aparece quando marcado */
+.custom-checkbox::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 7px;
+    width: 4px;
+    height: 8px;
+    border: solid var(--primary-color);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* Quando o input estiver checked, mostra o check */
+.login-checkbox:checked + .custom-checkbox {
+    border-color: var(--primary-color);
+    background-color: var(--primary-color);
+}
+
+.login-checkbox:checked + .custom-checkbox::after {
+    opacity: 1;
+    border-color: white;
+}
+
+.login-remember{
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+.login-button{
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0.25rem;
+    border: none;
+    cursor: pointer;
+}
+
+.login-button:hover{
+    background-color: var(--primary-color-hover);
+    transition: all 0.3s;
+}
+
+.forgot-password{
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.login-footer{
+    margin: 2rem 0;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.copyright{
+    margin: 1rem;
+}
+
+.invalid {
+  background-color: #f8e8e8;
+  color: #ff4c4c;
+}
+
+/* mensagem retonada pelo django */
+.message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #28a745; /* Verde */
+}
+
+.message.error {
+    background-color: #dc3545; /* Vermelho */
+}
+
+.message.warning {
+    background-color: #ffc107; /* Amarelo */
+    color: #212529;
+}
+
+.message.info {
+    background-color: #17a2b8; /* Azul */
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    /* margin-top: 1rem; */
+    font-size: 0.9rem;
+}
+
+.support-link{
+    text-decoration: underline;
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.support-link:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 700px) {
+    .geral{
+        grid-template-columns: 1fr;
+        text-align: center;
+        height: auto;
+    }
+
+    .image-background{
+        display: none;
+    }
+
+    .titulo{
+        margin: 20px 20px 0px 20px;
+        font-size: 3rem;
+    }
+
+    .subtitulo{
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .texto{
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .login-form{
+        margin: 30px;
+    }
+
+    .login-form-label{
+        font-weight: 600;
+        font-size: 0.675rem;
+    }
+
+    .login-form-input{
+        font-size: 1.125rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .login-remember{
+        font-size: 0.675rem;
+    }
+
+    .login-button{
+        font-size: 1.125rem;
+        padding: 0.875em 1.275rem;
+    }
+
+    .forgot-password{
+        margin-top: 0.875rem;
+        font-size: 0.675rem;
+    }
+
+    .support-link{
+        margin-top: 0.875rem;
+        font-size: 0.675rem;
+    }
+
+    .login-footer{
+        margin-top: 1.5rem;
+        font-size: 0.675rem;
+    }
+}
+
+/* Estilos para o Pop-up de Bloqueio */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.popup-content {
+    background-color: var(--background-color);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 400px;
+}
+.popup-content .login-button:disabled {
+    background-color: var(--secondary-color);
+    cursor: not-allowed;
+}
