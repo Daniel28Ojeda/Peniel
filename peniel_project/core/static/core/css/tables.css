@@ -1,0 +1,163 @@
+/* ==========================================================================
+   Estilos reutilizáveis para tabelas
+   ========================================================================== */
+/*
+  .tabela-container é o wrapper principal para a seção da tabela.
+  Pode ser usado em uma <section> ou <div>.
+*/
+.tabela-container {
+    margin: 0 20px 40px 20px; /* Mantém a margem padrão */
+}
+
+/*
+  .tabela-padrao é o contêiner direto da tabela, responsável pelo fundo,
+  sombra, bordas arredondadas e rolagem horizontal.
+*/
+.tabela-padrao {
+    overflow-x: auto;
+    background: var(--cor-fundo-secundario);
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tabela-padrao .table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 14px;
+}
+
+.tabela-padrao th,
+.tabela-padrao td {
+    white-space: nowrap;
+    vertical-align: middle;
+    padding: 12px 10px;
+    border-top: 1px solid var(--cor-borda);
+    text-align: center;
+}
+
+/*
+  Remove a aparência padrão de link (sublinhado, cor azul) dos cabeçalhos
+  de tabela que são usados para ordenação.
+*/
+.tabela-padrao th a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Faz o link herdar a cor do texto do cabeçalho (th) */
+}
+
+/*
+  Regra genérica para botões dentro de tabelas, para sobrescrever
+  o comportamento padrão do Bootstrap e alinhar com o tema.
+  Isso garante que os ícones (currentColor) usem a cor do tema.
+*/
+.tabela-padrao .btn {
+    /* background-color: transparent; Remove o fundo para botões outline */
+    color: var(--cor-texto-primario); /* Cor do ícone/texto alinhada ao tema */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    background-color: var(--cor-fundo-primario);
+    color: var(--cor-texto-primario);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: filter 0.2s ease-in-out;
+}
+
+.btn-actions .btn-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px; /* Aumenta um pouco o espaço para melhor clique */
+}
+
+/*
+  Aplica o truncamento de texto a todas as células que não são de ação
+  ou que não tenham a classe .no-truncate
+*/
+.tabela-padrao td:not(.col-acoes):not(.no-truncate) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 0;
+}
+
+/* --- Definição de Larguras das Colunas --- */
+/* Colunas Genéricas */
+.tabela-padrao .col-acoes {
+    width: 12%;
+}
+.tabela-padrao .col-status {
+    width: 11%;
+}
+.tabela-padrao .col-data {
+    width: 13%;
+}
+.tabela-padrao .col-hora {
+    width: 11%;
+}
+
+/* Colunas Específicas: Compromissos */
+.tabela-padrao .col-titulo {
+    width: 21%;
+}
+.tabela-padrao .col-servico {
+    width: 14%;
+}
+.tabela-padrao .col-profissional {
+    width: 15%;
+}
+.tabela-padrao .col-cliente {
+    width: 16%;
+}
+
+/* Colunas Específicas: Usuários */
+.tabela-padrao .col-nome {
+    width: 25%;
+}
+.tabela-padrao .col-email {
+    width: 25%;
+}
+.tabela-padrao .col-perfil {
+    width: 15%;
+}
+
+/* --- Estilos para o Menu de Status --- */
+.status-container {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    /* Garante que o container tenha o tamanho do badge */
+}
+
+.status-menu {
+    /* Alterado para 'fixed' para escapar do contexto de empilhamento da tabela */
+    position: fixed;
+    background-color: var(--cor-fundo-secundario);
+    border: 1px solid var(--cor-borda);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1056;
+    /* Um valor maior que o z-index do modal do Bootstrap (1055) */
+    min-width: 150px;
+    /* O posicionamento (top/left) será definido via JS */
+    /* --- CORREÇÃO: A transformação agora centraliza no cursor e se posiciona acima dele --- */
+    /* Move 50% para a esquerda (centraliza) e 100% para cima (posiciona acima) */
+    transform: translate(-50%, -100%);
+    margin-top: -5px;
+    /* Pequeno espaço entre o menu e o status */
+}
+
+.status-menu-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--cor-texto-primario);
+    /* Usa a cor do tema */
+}
+
+.status-menu-item:hover {
+    background-color: var(--cor-primaria);
+    /* Usa a cor do tema */
+    color: var(--cor-texto-sobre-primaria);
+    /* Usa a cor do tema */
+}

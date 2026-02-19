@@ -1,0 +1,11 @@
+.sidebar-icon{
+    /* A cor do ícone agora é definida pela cor do texto do link pai (currentColor no SVG) */
+    /* No entanto, podemos definir uma cor padrão para o estado normal */
+    color: var(--cor-texto-secundario);
+    width: 1.1em; /* Ajuste o tamanho conforme necessário */
+    height: 1.1em;
+}
+/* Quando o link está ativo ou em hover, a cor do ícone será var(--cor-primaria) herdada do .nav-link */
+.nav-link.active .sidebar-icon, .nav-link:hover .sidebar-icon {
+    color: var(--cor-primaria);
+}

@@ -1,0 +1,113 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="pt-br"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema Peniel - Gestão e Controle.">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="{% static 'accounts/icons/favicon.svg' %}">
+    <link rel="icon" type="image/png" href="{% static 'accounts/icons/favicon.png' %}">
+    
+    <!-- Preconnect for performance -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+    <!-- css -->
+    <link rel='stylesheet' type='text/css'
+        href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+        <link rel="stylesheet" href="{% static 'core/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/templatemo-style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/themes.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/sidebar.css' %}">
+    {% block extra_styles %}
+    {% endblock extra_styles %}
+
+    <!-- javascript -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"
+        defer></script>
+    <script src="{% static 'core/js/base.js' %}" defer></script>
+    <script src="{% static 'core/js/sidebar.js' %}" defer></script>
+    <script src="{% static 'core/js/theme_switcher.js' %}" defer></script>
+    
+    {% block extra_scripts %}
+    {% endblock extra_scripts %}
+
+    <title>{% block title %}Sistema Peniel{% endblock %}</title>
+</head>
+
+<body 
+    {% if user.is_authenticated %}
+        data-session-check-url="{% url 'core:check_session' %}" 
+        data-login-url="{% url 'login:login' %}"
+    {% endif %}
+>
+    <div class="d-flex" id="wrapper">
+        {% include 'core/sidebar.html' %}
+        <div id="page-content-wrapper">
+            {% include 'core/navbar.html' %}
+            <main class="main-content">
+
+                {% if messages %}
+                    <div class="container mt-3">
+                        {% for message in messages %}
+                            <div class="alert 
+                                {% if message.level == 40 %} {# ERROR #}
+                                    alert-danger bg-invalid
+                                {% elif message.tags == 'success' %}
+                                    alert-success bg-valid
+                                {% else %}
+                                    alert-{{ message.tags }}
+                                {% endif %}
+                                alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif%}
+
+                {% block content %}
+                {% endblock %}
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal de Sessão Expirada -->
+    <div class="modal fade" id="sessionExpiredModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="sessionExpiredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="sessionExpiredModalLabel">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill text-warning me-2" viewBox="0 0 16 16">
+                        <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    Sessão Expirada
+                </h5>
+            </div>
+            <div class="modal-body">
+                <p>Sua sessão expirou devido à inatividade ou porque você fez login em outro dispositivo.</p>
+                <p>Por favor, clique em 'OK' para fazer login novamente.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="sessionExpiredOkButton">OK</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de Verificação de Sessão -->
+    {% if user.is_authenticated %}
+        <script src="{% static 'core/js/session_check.js' %}" defer></script>
+    {% endif %}
+</body>
+
+</html>

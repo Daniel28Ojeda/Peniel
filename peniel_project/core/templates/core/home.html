@@ -1,0 +1,13 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Home - Peniel{% endblock %}
+
+{% block content %}
+<div class="container-fluid p-4">
+    <div class="alert alert-success">
+        <h4 class="alert-heading">Bem-vindo ao Sistema Peniel!</h4>
+        <p>Você está logado como: <strong>{{ request.user.get_perfil_display }}</strong></p>
+        <p class="mb-0">Filial: {{ request.user.filial.nome|default:"Não definida" }}</p>
+    </div>
+</div>
+{% endblock %}

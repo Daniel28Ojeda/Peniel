@@ -1,0 +1,597 @@
+:root {
+
+    /* ======================== Tema Padrão (Default) - Modo Claro ======================== */
+    /* Cores ajustadas para maior contraste e vibração */
+    --cor-fundo-primario: #f0f7ff; /* Tom de azul muito claro para o fundo */
+    --cor-fundo-secundario: #f8f9fa;
+    --cor-fundo-terciario: #e9ecef;
+    --cor-texto-primario: #212529;
+    --cor-texto-secundario: #6c757d;
+    --cor-borda: #dee2e6;
+    --cor-primaria: #007bff; /* Azul vibrante */
+    --cor-primaria-hover: #0056b3; /* Azul mais escuro para hover */
+    --cor-secundaria: #6c757d;
+    --cor-sucesso: #28a745; /* Verde sucesso */
+    --cor-perigo: #dc3545; /* Vermelho perigo */
+    --cor-aviso: #ffc107; /* Amarelo aviso */
+    --cor-info: #17a2b8; /* Ciano informativo */
+    --cor-texto-sobre-primaria: #ffffff;
+    --cor-fundo-desabilitado: #e9ecef;
+    --cor-fundo-input: #f8f9fa; /* Um cinza muito claro, quase branco */
+    --cor-primaria-transparente: rgba(115, 181, 252, 0.4);
+    --cor-sombra: rgba(0, 0, 0, 0.1); /* Sombra padrão para modo claro */
+
+    /* Calendário para o tema Padrão */
+    --cor-calendario-habilitado-fundo: #e7f3ff; /* Azul bem claro */
+    --cor-calendario-habilitado-texto: #004085; /* Azul escuro */
+    --cor-calendario-feriado-fundo: #ffebe6; /* Tom de vermelho/salmão claro */
+    --cor-calendario-feriado-texto: #b33e1a; /* Vermelho escuro */
+    --cor-calendario-desabilitado-fundo: #8da8c5; /* Azul claro (desabilitado) */
+    --cor-calendario-desabilitado-texto: #edeff1; /* Azul acinzentado */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #007bff;
+    --cor-grafico-2: #28a745;
+    --cor-grafico-3: #ffc107;
+    --cor-grafico-4: #dc3545;
+    --cor-grafico-5: #17a2b8;
+    --cor-grafico-6: #6f42c1; /* Roxo */
+    --cor-grafico-7: #fd7e14; /* Laranja */
+    --cor-grafico-8: #20c997; /* Verde-azulado */
+    --cor-grafico-9: #6c757d; /* Cinza */
+    --cor-grafico-10: #e83e8c; /* Rosa */
+}
+
+/* ======================== MODO ESCURO - GENÉRICO ======================== */
+html[data-mode="escuro"]{
+    --cor-fundo-primario: #121212;
+    --cor-fundo-secundario: #1e1e1e;
+    --cor-fundo-terciario: #2a2a2a;
+    --cor-texto-primario: #e8e6e3;
+    --cor-texto-secundario: #a8a8a8;
+    --cor-borda: #3a3a3a;
+    --cor-primaria: #3b82f6;
+    --cor-primaria-hover: #60a5fa;
+    --cor-secundaria: #9ca3af;
+    --cor-sucesso: #22c55e;
+    --cor-perigo: #ef4444;
+    --cor-aviso: #f59e0b;
+    --cor-info: #38bdf8;
+    --cor-fundo-desabilitado: #2a2a2a; /* Cor para itens desabilitados no modo escuro */
+    --cor-texto-sobre-primaria: #ffffff;
+    --cor-fundo-input: #495057; /* Um cinza claro para o modo escuro */
+    --cor-primaria-transparente: rgba(0, 85, 220, 0.4);
+    --cor-sombra: rgba(0, 0, 0, 0.25); /* Sombra padrão para modo escuro */
+
+    /* Paleta de Cores para Gráficos (Modo Escuro) */
+    --cor-grafico-1: #3b82f6;
+    --cor-grafico-2: #22c55e;
+    --cor-grafico-3: #f59e0b;
+    --cor-grafico-4: #ef4444;
+    --cor-grafico-5: #38bdf8;
+    --cor-grafico-6: #a78bfa; /* Roxo claro */
+    --cor-grafico-7: #fb923c; /* Laranja claro */
+    --cor-grafico-8: #34d399; /* Verde-azulado claro */
+    --cor-grafico-9: #9ca3af; /* Cinza claro */
+    --cor-grafico-10: #f472b6; /* Rosa claro */
+}
+
+/* ======================== TEMAS ======================== */
+
+/* --- 1. Tema Azul --- */
+html[data-theme="azul"][data-mode="claro"]{
+    --cor-fundo-primario: #f0f7ff;
+    --cor-fundo-secundario: #d9e2ee; /* Azul super claro para o fundo */
+    --cor-primaria: #3b82f6;
+    --cor-primaria-hover: #2563eb;
+    --cor-secundaria: #93c5fd;
+    --cor-sucesso: #22c55e;
+    --cor-perigo: #ef4444;
+    --cor-fundo-input: #e7f1ff; /* Azul bem clarinho */
+    --cor-primaria-transparente: rgba(59, 130, 246, 0.25); /* #3b82f6 com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #dbeafe; /* Azul bem claro */
+    --cor-calendario-habilitado-texto: #1e40af; /* Azul escuro */
+    --cor-calendario-feriado-fundo: #ffe4e6;
+    --cor-calendario-feriado-texto: #c72c41;
+    --cor-calendario-desabilitado-fundo: #1e3a8a; /* Azul mais escuro */
+    --cor-calendario-desabilitado-texto: #bbd9fc; /* Azul claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #3b82f6;
+    --cor-grafico-2: #10b981;
+    --cor-grafico-3: #f59e0b;
+    --cor-grafico-4: #ef4444;
+    --cor-grafico-5: #0ea5e9;
+    --cor-grafico-6: #8b5cf6;
+    --cor-grafico-7: #14b8a6;
+    --cor-grafico-8: #f97316;
+    --cor-grafico-9: #ec4899;
+    --cor-grafico-10: #64748b;
+}
+html[data-theme="azul"][data-mode="escuro"]{
+    --cor-fundo-primario: #1e293b;
+    --cor-fundo-secundario: #334155;
+    --cor-primaria: #60a5fa;
+    --cor-primaria-hover: #93c5fd;
+    --cor-secundaria: #94a3b8;
+    --cor-primaria-transparente: rgba(96, 165, 250, 0.25); /* #60a5fa com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #1f2937; /* Azul bem escuro */
+    --cor-calendario-habilitado-texto: #5da6fa; /* Azul claro */
+    --cor-calendario-feriado-fundo: #582c34;
+    --cor-calendario-feriado-texto: #f5b5bc;
+    --cor-calendario-desabilitado-fundo: #0c1118; /* Azul mais escuro ainda */
+    --cor-calendario-desabilitado-texto: #bbd9fc; /* Azul claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #60a5fa;
+    --cor-grafico-2: #34d399;
+    --cor-grafico-3: #facc15;
+    --cor-grafico-4: #f87171;
+    --cor-grafico-5: #38bdf8;
+    --cor-grafico-6: #a78bfa;
+    --cor-grafico-7: #5eead4;
+    --cor-grafico-8: #fb923c;
+    --cor-grafico-9: #f472b6;
+    --cor-grafico-10: #94a3b8;
+}
+
+/* --- 2. Tema Verde --- */
+html[data-theme="verde"][data-mode="claro"]{
+    --cor-fundo-primario: #f0fdf4;
+    --cor-fundo-secundario: #dcfce7; /* Tom de verde um pouco mais escuro para contraste */
+    --cor-primaria: #22c55e;
+    --cor-primaria-hover: #16a34a;
+    --cor-secundaria: #86efac;
+    --cor-fundo-input: #e9fbf0; /* Verde bem clarinho */
+    --cor-primaria-transparente: rgba(34, 197, 94, 0.25); /* #22c55e com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #dcfce7; /* Verde bem claro */
+    --cor-calendario-habilitado-texto: #15803d; /* Verde escuro */
+    --cor-calendario-feriado-fundo: #fff0e6;
+    --cor-calendario-feriado-texto: #c75c1a;
+    --cor-calendario-desabilitado-fundo: #14532d; /* Verde escuro */
+    --cor-calendario-desabilitado-texto: #bbf7d0; /* Verde claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #22c55e;
+    --cor-grafico-2: #14b8a6;
+    --cor-grafico-3: #eab308;
+    --cor-grafico-4: #ef4444;
+    --cor-grafico-5: #06b6d4;
+    --cor-grafico-6: #8b5cf6;
+    --cor-grafico-7: #3b82f6;
+    --cor-grafico-8: #f97316;
+    --cor-grafico-9: #d946ef;
+    --cor-grafico-10: #6b7280;
+}
+html[data-theme="verde"][data-mode="escuro"]{
+    --cor-fundo-primario: #1a2e27;
+    --cor-fundo-secundario: #2a4a3e;
+    --cor-primaria: #4ade80;
+    --cor-primaria-hover: #86efac;
+    --cor-secundaria: #a1a1aa;
+    --cor-primaria-transparente: rgba(74, 222, 128, 0.25); /* #4ade80 com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #164e38; /* Verde escuro */
+    --cor-calendario-habilitado-texto: #86efac; /* Verde claro */
+    --cor-calendario-feriado-fundo: #583c2c;
+    --cor-calendario-feriado-texto: #f5d1b5;
+    --cor-calendario-desabilitado-fundo: #0f2b20; /* Verde mais escuro ainda */
+    --cor-calendario-desabilitado-texto: #bbf7d0; /* Verde claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #4ade80;
+    --cor-grafico-2: #2dd4bf;
+    --cor-grafico-3: #fde047;
+    --cor-grafico-4: #f87171;
+    --cor-grafico-5: #22d3ee;
+    --cor-grafico-6: #c084fc;
+    --cor-grafico-7: #60a5fa;
+    --cor-grafico-8: #fb923c;
+    --cor-grafico-9: #e879f9;
+    --cor-grafico-10: #9ca3af;
+}
+
+/* --- 3. Tema Roxo --- */
+html[data-theme="roxo"][data-mode="claro"]{
+    --cor-fundo-primario: #fbfaff;
+    --cor-fundo-secundario: #f5f3ff;
+    --cor-primaria: #8b5cf6;
+    --cor-primaria-hover: #7c3aed;
+    --cor-secundaria: #c4b5fd;
+    --cor-fundo-input: #f1e7ff; /* Roxo bem clarinho */
+    --cor-primaria-transparente: rgba(139, 92, 246, 0.25); /* #8b5cf6 com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #ede9fe; /* Roxo bem claro */
+    --cor-calendario-habilitado-texto: #6d28d9; /* Roxo escuro */
+    --cor-calendario-feriado-fundo: #f9e6ff;
+    --cor-calendario-feriado-texto: #9e1ac7;
+    --cor-calendario-desabilitado-fundo: #5b21b6; /* Roxo escuro */
+    --cor-calendario-desabilitado-texto: #ddd6fe; /* Roxo claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #8b5cf6;
+    --cor-grafico-2: #ec4899;
+    --cor-grafico-3: #f59e0b;
+    --cor-grafico-4: #ef4444;
+    --cor-grafico-5: #3b82f6;
+    --cor-grafico-6: #d946ef;
+    --cor-grafico-7: #10b981;
+    --cor-grafico-8: #f97316;
+    --cor-grafico-9: #0ea5e9;
+    --cor-grafico-10: #6b7280;
+}
+html[data-theme="roxo"][data-mode="escuro"]{
+    --cor-fundo-primario: #2e1041;
+    --cor-fundo-secundario: #4a1d69;
+    --cor-primaria: #a78bfa;
+    --cor-primaria-hover: #c4b5fd;
+    --cor-secundaria: #a1a1aa;
+    --cor-primaria-transparente: rgba(167, 139, 250, 0.25); /* #a78bfa com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #4c1d95; /* Roxo escuro */
+    --cor-calendario-habilitado-texto: #c4b5fd; /* Roxo claro */
+    --cor-calendario-feriado-fundo: #532c58;
+    --cor-calendario-feriado-texto: #f5b5f1;
+    --cor-calendario-desabilitado-fundo: #2a0f46; /* Roxo mais escuro ainda */
+    --cor-calendario-desabilitado-texto: #ddd6fe; /* Roxo claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #a78bfa;
+    --cor-grafico-2: #f472b6;
+    --cor-grafico-3: #facc15;
+    --cor-grafico-4: #f87171;
+    --cor-grafico-5: #60a5fa;
+    --cor-grafico-6: #e879f9;
+    --cor-grafico-7: #34d399;
+    --cor-grafico-8: #fb923c;
+    --cor-grafico-9: #38bdf8;
+    --cor-grafico-10: #9ca3af;
+}
+
+/* --- 4. Tema Amarelo/Laranja --- */
+html[data-theme="amarelo"][data-mode="claro"]{
+    --cor-fundo-primario: #fffcf5;
+    --cor-fundo-secundario: #fef9c3; /* Tom de amarelo um pouco mais escuro para contraste */
+    --cor-primaria: #f59e0b;
+    --cor-primaria-hover: #d97706;
+    --cor-secundaria: #fcd34d;
+    --cor-texto-sobre-primaria: #1f2937;
+    --cor-fundo-input: #fff8e1; /* Amarelo bem clarinho */
+    --cor-primaria-transparente: rgba(245, 158, 11, 0.25); /* #f59e0b com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #fef3c7; /* Amarelo bem claro */
+    --cor-calendario-habilitado-texto: #b45309; /* Laranja escuro */
+    --cor-calendario-feriado-fundo: #ffe6e6;
+    --cor-calendario-feriado-texto: #c71a1a;
+    --cor-calendario-desabilitado-fundo: #92400e; /* Laranja escuro */
+    --cor-calendario-desabilitado-texto: #fde68a; /* Amarelo claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #f59e0b;
+    --cor-grafico-2: #ef4444;
+    --cor-grafico-3: #84cc16;
+    --cor-grafico-4: #d97706;
+    --cor-grafico-5: #0ea5e9;
+    --cor-grafico-6: #7c3aed;
+    --cor-grafico-7: #22c55e;
+    --cor-grafico-8: #db2777;
+    --cor-grafico-9: #3b82f6;
+    --cor-grafico-10: #4b5563;
+}
+html[data-theme="amarelo"][data-mode="escuro"]{
+    --cor-fundo-primario: #2a2110;
+    --cor-fundo-secundario: #42351c;
+    --cor-primaria: #fca510;
+    --cor-primaria-hover: #facc15;
+    --cor-secundaria: #a1a1aa;
+    --cor-texto-sobre-primaria: #1f2937;
+    --cor-primaria-transparente: rgba(252, 165, 16, 0.25); /* #fca510 com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #78350f; /* Laranja escuro */
+    --cor-calendario-habilitado-texto: #fcd34d; /* Amarelo claro */
+    --cor-calendario-feriado-fundo: #582c2c;
+    --cor-calendario-feriado-texto: #f5b5b5;
+    --cor-calendario-desabilitado-fundo: #451a03; /* Marrom escuro */
+    --cor-calendario-desabilitado-texto: #fde68a; /* Amarelo claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #fca510;
+    --cor-grafico-2: #f87171;
+    --cor-grafico-3: #a3e635;
+    --cor-grafico-4: #fb923c;
+    --cor-grafico-5: #38bdf8;
+    --cor-grafico-6: #c084fc;
+    --cor-grafico-7: #4ade80;
+    --cor-grafico-8: #f472b6;
+    --cor-grafico-9: #60a5fa;
+    --cor-grafico-10: #9ca3af;
+}
+
+/* --- 5. Tema Preto e Branco --- */
+html[data-theme="pb"][data-mode="claro"]{
+    --cor-fundo-primario: #f8f9fa;
+    --cor-fundo-secundario: #e9ecef; /* Cinza um pouco mais escuro para contraste */
+    --cor-primaria: #212529;
+    --cor-primaria-hover: #495057;
+    --cor-secundaria: #adb5bd;
+    --cor-fundo-input: #f1f3f5; /* Cinza bem clarinho */
+    --cor-primaria-transparente: rgba(33, 37, 41, 0.25); /* #212529 com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #f1f3f5; /* Cinza bem claro */
+    --cor-calendario-habilitado-texto: #212529; /* Preto */
+    --cor-calendario-feriado-fundo: #e6e6e6;
+    --cor-calendario-feriado-texto: #5c5c5c;
+    --cor-calendario-desabilitado-fundo: #495057; /* Cinza escuro */
+    --cor-calendario-desabilitado-texto: #ced4da; /* Cinza claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #212529;
+    --cor-grafico-2: #5a6268;
+    --cor-grafico-3: #9da5ad;
+    --cor-grafico-4: #c3c8ce;
+    --cor-grafico-5: #495057;
+    --cor-grafico-6: #6c757d;
+    --cor-grafico-7: #adb5bd;
+    --cor-grafico-8: #343a40;
+    --cor-grafico-9: #868e96;
+    --cor-grafico-10: #000000;
+}
+html[data-theme="pb"][data-mode="escuro"]{
+    --cor-fundo-primario: #000000;
+    --cor-fundo-secundario: #1c1c1c;
+    --cor-primaria: #e9ecef;
+    --cor-primaria-hover: #ffffff;
+    --cor-secundaria: #6c757d;
+    --cor-texto-sobre-primaria: #000000;
+    --cor-primaria-transparente: rgba(233, 236, 239, 0.25); /* #e9ecef com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #30353a; /* Cinza escuro */
+    --cor-calendario-habilitado-texto: #f8f9fa; /* Branco */
+    --cor-calendario-feriado-fundo: #4d4d4d;
+    --cor-calendario-feriado-texto: #cccccc;
+    --cor-calendario-desabilitado-fundo: #000000; /* Preto */
+    --cor-calendario-desabilitado-texto: #ced4da; /* Cinza claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #e9ecef;
+    --cor-grafico-2: #adb5bd;
+    --cor-grafico-3: #6c757d;
+    --cor-grafico-4: #495057;
+    --cor-grafico-5: #f8f9fa;
+    --cor-grafico-6: #ced4da;
+    --cor-grafico-7: #dee2e6;
+    --cor-grafico-8: #ffffff;
+    --cor-grafico-9: #9fa6ac;
+    --cor-grafico-10: #d3d8dd;
+}
+
+/* --- 6. Tema Ciano --- */
+html[data-theme="ciano"][data-mode="claro"]{
+    --cor-fundo-primario: #f0fdff;
+    --cor-fundo-secundario: #cffafe; /* Tom de ciano um pouco mais escuro para contraste */
+    --cor-primaria: #06b6d4;
+    --cor-primaria-hover: #0891b2;
+    --cor-secundaria: #67e8f9;
+    --cor-fundo-input: #e0fbfc; /* Ciano bem clarinho */
+    --cor-primaria-transparente: rgba(6, 182, 212, 0.25); /* #06b6d4 com 25% de opacidade */
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #cffafe; /* Ciano bem claro */
+    --cor-calendario-habilitado-texto: #0e7490; /* Ciano escuro */
+    --cor-calendario-feriado-fundo: #e6fcff;
+    --cor-calendario-feriado-texto: #1a9ec7;
+    --cor-calendario-desabilitado-fundo: #155e75; /* Ciano escuro */
+    --cor-calendario-desabilitado-texto: #a5f3fc; /* Ciano claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #06b6d4;
+    --cor-grafico-2: #14b8a6;
+    --cor-grafico-3: #f59e0b;
+    --cor-grafico-4: #ef4444;
+    --cor-grafico-5: #3b82f6;
+    --cor-grafico-6: #8b5cf6;
+    --cor-grafico-7: #22c55e;
+    --cor-grafico-8: #f97316;
+    --cor-grafico-9: #ec4899;
+    --cor-grafico-10: #64748b;
+}
+html[data-theme="ciano"][data-mode="escuro"]{
+    --cor-fundo-primario: #1a2e35;
+    --cor-fundo-secundario: #2a4a52;
+    --cor-primaria: #22d3ee;
+    --cor-primaria-hover: #67e8f9;
+    --cor-secundaria: #a1a1aa;
+    --cor-primaria-transparente: rgba(34, 211, 238, 0.25); /* #22d3ee com 25% de opacidade */
+    
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #164e63; /* Ciano escuro */
+    --cor-calendario-habilitado-texto: #67e8f9; /* Ciano claro */
+    --cor-calendario-feriado-fundo: #2c5855;
+    --cor-calendario-feriado-texto: #b5f5e5;
+    --cor-calendario-desabilitado-fundo: #082f3b; /* Ciano mais escuro ainda */
+    --cor-calendario-desabilitado-texto: #a5f3fc; /* Ciano claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #22d3ee;
+    --cor-grafico-2: #2dd4bf;
+    --cor-grafico-3: #facc15;
+    --cor-grafico-4: #f87171;
+    --cor-grafico-5: #60a5fa;
+    --cor-grafico-6: #c084fc;
+    --cor-grafico-7: #4ade80;
+    --cor-grafico-8: #fb923c;
+    --cor-grafico-9: #f472b6;
+    --cor-grafico-10: #94a3b8;
+}
+
+/* --- 7. Tema Rosa --- */
+html[data-theme="rosa"][data-mode="claro"]{
+    --cor-fundo-primario: #fdf2f8;
+    --cor-fundo-secundario: #fce7f3;
+    --cor-primaria: #ec4899;
+    --cor-primaria-hover: #db2777;
+    --cor-secundaria: #f9a8d4;
+    --cor-fundo-input: #fdf2f8;
+    --cor-primaria-transparente: rgba(236, 72, 153, 0.25);
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #fce7f3; /* Rosa bem claro */
+    --cor-calendario-habilitado-texto: #be185d; /* Rosa escuro */
+    --cor-calendario-feriado-fundo: #f5f3ff;
+    --cor-calendario-feriado-texto: #7c3aed;
+    --cor-calendario-desabilitado-fundo: #9d174d; /* Rosa escuro */
+    --cor-calendario-desabilitado-texto: #fbcfe8; /* Rosa claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #ec4899;
+    --cor-grafico-2: #d946ef;
+    --cor-grafico-3: #f59e0b;
+    --cor-grafico-4: #ef4444;
+    --cor-grafico-5: #3b82f6;
+    --cor-grafico-6: #8b5cf6;
+    --cor-grafico-7: #10b981;
+    --cor-grafico-8: #f97316;
+    --cor-grafico-9: #0ea5e9;
+    --cor-grafico-10: #6b7280;
+}
+html[data-theme="rosa"][data-mode="escuro"]{
+    --cor-fundo-primario: #391a2b;
+    --cor-fundo-secundario: #53253e;
+    --cor-primaria: #f472b6;
+    --cor-primaria-hover: #f9a8d4;
+    --cor-secundaria: #a1a1aa;
+    --cor-primaria-transparente: rgba(244, 114, 182, 0.25);
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #831843; /* Rosa escuro */
+    --cor-calendario-habilitado-texto: #f9a8d4; /* Rosa claro */
+    --cor-calendario-feriado-fundo: #4c1d95;
+    --cor-calendario-feriado-texto: #c4b5fd;
+    --cor-calendario-desabilitado-fundo: #4a0d2b; /* Rosa mais escuro ainda */
+    --cor-calendario-desabilitado-texto: #fbcfe8; /* Rosa claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #f472b6;
+    --cor-grafico-2: #e879f9;
+    --cor-grafico-3: #facc15;
+    --cor-grafico-4: #f87171;
+    --cor-grafico-5: #60a5fa;
+    --cor-grafico-6: #c084fc;
+    --cor-grafico-7: #34d399;
+    --cor-grafico-8: #fb923c;
+    --cor-grafico-9: #38bdf8;
+    --cor-grafico-10: #9ca3af;
+}
+
+/* --- 8. Tema Vermelho --- */
+html[data-theme="vermelho"][data-mode="claro"]{
+    --cor-fundo-primario: #fef2f2;
+    --cor-fundo-secundario: #fee2e2;
+    --cor-primaria: #ef4444;
+    --cor-primaria-hover: #dc2626;
+    --cor-secundaria: #fca5a5;
+    --cor-fundo-input: #fef2f2;
+    --cor-primaria-transparente: rgba(239, 68, 68, 0.25);
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #fee2e2; /* Vermelho bem claro */
+    --cor-calendario-habilitado-texto: #b91c1c; /* Vermelho escuro */
+    --cor-calendario-feriado-fundo: #fffbeb;
+    --cor-calendario-feriado-texto: #d97706;
+    --cor-calendario-desabilitado-fundo: #991b1b; /* Vermelho escuro */
+    --cor-calendario-desabilitado-texto: #fecaca; /* Vermelho claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #ef4444;
+    --cor-grafico-2: #f97316;
+    --cor-grafico-3: #eab308;
+    --cor-grafico-4: #ec4899;
+    --cor-grafico-5: #8b5cf6;
+    --cor-grafico-6: #22c55e;
+    --cor-grafico-7: #d97706;
+    --cor-grafico-8: #0ea5e9;
+    --cor-grafico-9: #d946ef;
+    --cor-grafico-10: #6b7280;
+}
+html[data-theme="vermelho"][data-mode="escuro"]{
+    --cor-fundo-primario: #3d1c1c;
+    --cor-fundo-secundario: #5c2a2a;
+    --cor-primaria: #f87171;
+    --cor-primaria-hover: #fca5a5;
+    --cor-secundaria: #a1a1aa;
+    --cor-primaria-transparente: rgba(248, 113, 113, 0.25);
+
+    /* Calendário */
+    --cor-calendario-habilitado-fundo: #991b1b; /* Vermelho escuro */
+    --cor-calendario-habilitado-texto: #fca5a5; /* Vermelho claro */
+    --cor-calendario-feriado-fundo: #78350f;
+    --cor-calendario-feriado-texto: #fcd34d;
+    --cor-calendario-desabilitado-fundo: #450a0a; /* Vermelho mais escuro ainda */
+    --cor-calendario-desabilitado-texto: #fecaca; /* Vermelho claro */
+
+    /* Paleta de Cores para Gráficos */
+    --cor-grafico-1: #f87171;
+    --cor-grafico-2: #fb923c;
+    --cor-grafico-3: #fde047;
+    --cor-grafico-4: #f472b6;
+    --cor-grafico-5: #c084fc;
+    --cor-grafico-6: #4ade80;
+    --cor-grafico-7: #fbbf24;
+    --cor-grafico-8: #38bdf8;
+    --cor-grafico-9: #e879f9;
+    --cor-grafico-10: #9ca3af;
+}
+
+/*
+  Garante que os cabeçalhos de tabelas (Bootstrap .table-light)
+  tenham o texto legível em qualquer tema/modo.
+*/
+.table > thead {
+    background-color: var(--cor-fundo-terciario);
+    color: var(--cor-texto-primario);
+}
+
+/*
+  Garante que o corpo da tabela use as cores corretas do tema.
+  Sobrescrevemos a variável do Bootstrap (--bs-table-color) para que o texto
+  dentro de td e th use a cor primária do tema.
+*/
+.table {
+    --bs-table-color: var(--cor-texto-primario);
+    --bs-table-bg: var(--cor-fundo-secundario); /* ALTERADO: Define o fundo padrão da tabela como secundário */
+    --bs-table-border-color: var(--cor-borda);
+    /* NOVO: Sobrescreve as variáveis de hover do Bootstrap para usar as cores do nosso tema. */
+    --bs-table-hover-bg: var(--cor-primaria-transparente);
+    --bs-table-hover-color: var(--cor-texto-primario);
+}
+
+/* --- Estilo para Feriados no Calendário --- */
+.day.feriado.desabilitado {
+    background-color: var(--cor-calendario-feriado-fundo);
+    color: var(--cor-calendario-feriado-texto);
+    font-weight: bold;
+    border: 1px solid var(--cor-calendario-feriado-texto);
+}
+
+/* Estilo para a descrição do feriado dentro da célula do mês */
+.feriado-descricao {
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
