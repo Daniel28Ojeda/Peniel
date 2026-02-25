@@ -1,0 +1,37 @@
+/* ===== MINISTÉRIOS ===== */
+
+/* Badges de filiais */
+
+.filial {
+  background: #eef2f7;
+  color: #5f6b7a;
+  margin-right: 4px;
+}
+
+/* Seleção de filiais no formulário */
+
+.filial-check {
+  background: #f5f7fa;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #e1e5ea;
+}
+
+/* Espaçamento entre itens do grupo */
+
+.filial-check input {
+  cursor: pointer;
+}
+
+/* Descrição do ministério na lista */
+
+.ministerio-descricao {
+  font-size: 13px;
+  color: #6c757d;
+}
+
+/* Ajuste fino do título do ministério */
+
+.ministerio-nome {
+  font-weight: 600;
+}

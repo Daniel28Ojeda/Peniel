@@ -1,0 +1,131 @@
+/* ===== GRID ===== */
+
+.filiais-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+    gap: 20px;
+}
+
+
+/* ===== CARD ===== */
+
+.filial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border: 1px solid #eef1f4;
+}
+
+
+/* ===== HEADER ===== */
+
+.filial-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.filial-icon {
+    width: 42px;
+    height: 42px;
+    background: #edf3ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.filial-name {
+    font-weight: 600;
+}
+
+.filial-address {
+    font-size: 13px;
+    color: #6c757d;
+}
+
+
+/* ===== STATUS ===== */
+
+.status-badge {
+    margin-left: auto;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-badge.active {
+    background: #e6f7ee;
+    color: #198754;
+}
+
+.status-badge.inactive {
+    background: #fdeaea;
+    color: #dc3545;
+}
+
+
+/* ===== STATS ===== */
+
+.filial-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.stat-box {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.stat-box strong {
+    display: block;
+    font-size: 18px;
+}
+
+.stat-box span {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #6c757d;
+}
+
+
+/* ===== ACTIONS ===== */
+
+.filial-actions {
+    display: flex;
+    gap: 10px;
+}
+
+
+/* ===== FORM ===== */
+
+.form-container {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #eef1f4;
+}
+
+.form-header {
+    margin-bottom: 20px;
+}
+
+.form-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,260 @@
+/* ==============================
+   SOLICITAÇÕES MODULE
+============================== */
+
+/* Container padrão do módulo */
+.module-container {
+    padding: 24px;
+}
+
+/* Header da página */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-title {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.page-subtitle {
+    font-size: 13px;
+    color: #6c757d;
+}
+
+/* Card padrão */
+.card-module {
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    background: #fff;
+}
+
+/* Barra de busca */
+.search-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+/* Badges de status */
+.badge-status {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-enviada { background: #e7f1ff; color: #0d6efd; }
+.status-aprovada { background: #e6f7ee; color: #198754; }
+.status-aguardando { background: #fff3cd; color: #b58105; }
+.status-finalizada { background: #e6f7ee; color: #198754; }
+.status-rejeitada { background: #fde8e8; color: #dc3545; }
+.status-rascunho { background: #f1f3f5; color: #495057; }
+
+/* Tabela */
+.table-module thead th {
+    font-size: 12px;
+    color: #6c757d;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Form padrão */
+.form-card {
+    max-width: 720px;
+}
+
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Prestação de contas */
+.gasto-row {
+    display: grid;
+    grid-template-columns: 1fr 140px 160px 40px;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.gasto-header {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 6px;
+}
+
+.btn-add-item {
+    margin-top: 10px;
+}
+
+/* ==============================
+   WORKFLOW / TIMELINE
+============================== */
+
+.workflow-timeline {
+    border-left: 3px solid #e9ecef;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+.timeline-step {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.timeline-step::before {
+    content: "";
+    position: absolute;
+    left: -28px;
+    top: 3px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #dee2e6;
+}
+
+.timeline-step.done::before {
+    background: #198754;
+}
+
+.timeline-step.active::before {
+    background: #0d6efd;
+}
+
+.timeline-title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.timeline-meta {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+/* ==============================
+   PAINEL TESOURARIA
+============================== */
+
+.approval-panel {
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 16px;
+    background: #f8f9fa;
+}
+
+.approval-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.approval-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* ==============================
+   ESTADOS SIMULADOS
+============================== */
+
+/* use no <body> ou container principal */
+
+.state-enviada .area-prestacao,
+.state-rascunho .approval-panel,
+.state-finalizada .approval-panel {
+    display: none;
+}
+
+.state-aprovada .approval-inicial {
+    display: none;
+}
+
+.state-prestacao-enviada .approval-inicial {
+    display: none;
+}
+
+/* ==============================
+   PRESTAÇÃO - ITENS E ANEXOS
+============================== */
+
+.gasto-item {
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: #fff;
+}
+
+.gasto-grid {
+    display: grid;
+    grid-template-columns: 1fr 140px 220px 40px;
+    gap: 10px;
+    align-items: center;
+}
+
+.anexo-box {
+    border: 1px dashed #ced4da;
+    border-radius: 6px;
+    padding: 8px;
+    font-size: 13px;
+    background: #f8f9fa;
+}
+
+.anexo-file {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #0d6efd;
+    font-weight: 500;
+}
+
+.anexo-preview {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+/* modo somente leitura após envio */
+.state-prestacao-enviada .gasto-item input,
+.state-prestacao-enviada .gasto-item button.btn-remover,
+.state-prestacao-enviada .btn-add-item {
+    display: none;
+}
+
+.state-prestacao-enviada .anexo-box {
+    background: #eef6ff;
+    border-style: solid;
+}
+
+/* ==============================
+   CONTROLE POR PERFIL
+============================== */
+
+.role-usuario .only-tesouraria { display: none; }
+.role-tesouraria .only-usuario { display: none; }
+
+/* ==============================
+   CONTROLE POR ESTADO
+============================== */
+
+/* prestação só existe após aprovação */
+.state-enviada .area-prestacao { display: none; }
+
+/* edição bloqueada após envio da prestação */
+.state-prestacao-enviada .editable { pointer-events: none; opacity: .85; }
+
+/* finalizado = somente leitura */
+.state-prestacao-finalizada input,
+.state-prestacao-finalizada textarea,
+.state-prestacao-finalizada select,
+.state-prestacao-finalizada button:not(.btn-regredir) {
+    pointer-events: none;
+    opacity: .7;
+}
+
+/* timeline helper */
+.timeline-step.done { color: #198754; }
+.timeline-step.active { color: #0d6efd; }
